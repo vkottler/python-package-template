@@ -1,0 +1,20 @@
+default_target: "groups-all"
+
+configs:
+- "local/configs"
+
+schemas:
+- "config/schemas"
+
+templates:
+- "config/templates"
+
+renders:
+- name: "LICENSE"
+  key: "LICENSE_MIT"
+  output_dir: "."
+
+groups:
+- name: "all"
+  dependencies:
+  - "renders-LICENSE"
