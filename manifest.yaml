@@ -8,13 +8,29 @@ schemas:
 
 templates:
 - "config/templates"
+- "local/templates"
+
+commands:
+- name: "tree"
+  command: "tree"
+  force: true
+  arguments:
+  - "-I"
+  - "venv*|__pycache__|dist|htmlcov|datazen-out|config|build|*.egg-info"
+  - "--"
+  - "package-name"
 
 renders:
 - name: "LICENSE"
   key: "LICENSE_MIT"
   output_dir: "."
+- name: "README.md"
+  output_dir: "."
+  dependencies:
+  - "commands-tree"
 
 groups:
 - name: "all"
   dependencies:
   - "renders-LICENSE"
+  - "renders-README.md"
