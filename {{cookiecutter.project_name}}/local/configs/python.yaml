@@ -1,0 +1,5 @@
+author_info:
+  name: "{{cookiecutter.name}}"
+  email: "{{cookiecutter.email}}"
+  username: "{{cookiecutter.username}}"
+versions: ["3.6", "3.7", "3.8", "3.9"]
