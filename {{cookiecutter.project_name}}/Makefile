@@ -8,21 +8,12 @@ $(error target this Makefile with 'mk', not '$(MAKE)' ($(MK_INFO)))
 endif
 ###############################################################################
 
-.PHONY: generate test clean
+.PHONY: all edit clean
 
-generate: | $(VENV_CONC)
-	$(PYTHON_BIN)/cookiecutter \
-		-o $($(PROJ)_DIR)/.. \
-		$($(PROJ)_DIR)
+.DEFAULT_GOAL := all
 
-OUTPUT := package-name
+all: $(DZ_PREFIX)sync
 
-test: | $(VENV_CONC)
-	rm -rf $($(PROJ)_DIR)/$(OUTPUT)
-	$(PYTHON_BIN)/cookiecutter \
-		-o $($(PROJ)_DIR) \
-		--no-input \
-		$($(PROJ)_DIR)
+edit: $(PY_PREFIX)edit
 
-clean: $(DZ_PREFIX)clean $(PY_PREFIX)clean
-	rm -rf $($(PROJ)_DIR)/$(OUTPUT)
+clean: $(PY_PREFIX)clean $(DZ_PREFIX)clean
