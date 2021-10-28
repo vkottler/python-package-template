@@ -8,7 +8,7 @@ $(error target this Makefile with 'mk', not '$(MAKE)' ($(MK_INFO)))
 endif
 ###############################################################################
 
-.PHONY: generate test clean
+.PHONY: generate test clean yaml
 
 generate: | $(VENV_CONC)
 	$(PYTHON_BIN)/cookiecutter \
@@ -26,3 +26,5 @@ test: | $(VENV_CONC)
 
 clean: $(DZ_PREFIX)clean $(PY_PREFIX)clean
 	rm -rf $($(PROJ)_DIR)/$(OUTPUT)
+
+yaml: $(YAML_PREFIX)lint-local $(YAML_PREFIX)lint-manifest.yaml

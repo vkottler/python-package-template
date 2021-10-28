@@ -1,36 +1,37 @@
+---
 default_target: "groups-all"
 
 configs:
-- "local/configs"
+  - "local/configs"
 
 schemas:
-- "config/schemas"
+  - "config/schemas"
 
 templates:
-- "config/templates"
-- "local/templates"
+  - "config/templates"
+  - "local/templates"
 
 commands:
-- name: "tree"
-  command: "tree"
-  force: true
-  arguments:
-  - "-I"
-  - "venv*|__pycache__|dist|htmlcov|datazen-out|config|build|*.egg-info"
-  - "--"
-  - "package-name"
+  - name: "tree"
+    command: "tree"
+    force: true
+    arguments:
+      - "-I"
+      - "venv*|__pycache__|dist|htmlcov|datazen-out|config|build|*.egg-info"
+      - "--"
+      - "package-name"
 
 renders:
-- name: "LICENSE"
-  key: "LICENSE_MIT"
-  output_dir: "."
-- name: "README.md"
-  output_dir: "."
-  dependencies:
-  - "commands-tree"
+  - name: "LICENSE"
+    key: "LICENSE_MIT"
+    output_dir: "."
+  - name: "README.md"
+    output_dir: "."
+    dependencies:
+      - "commands-tree"
 
 groups:
-- name: "all"
-  dependencies:
-  - "renders-LICENSE"
-  - "renders-README.md"
+  - name: "all"
+    dependencies:
+      - "renders-LICENSE"
+      - "renders-README.md"

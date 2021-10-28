@@ -1,3 +1,4 @@
+---
 author_info:
   name: "{{cookiecutter.name}}"
   email: "{{cookiecutter.email}}"

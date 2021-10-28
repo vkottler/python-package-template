@@ -1,6 +1,7 @@
+---
 name: "{{cookiecutter.project_name}}"
-version: {{ '{{major}}.{{minor}}.{{patch}}' }}
+version: "{{ '{{major}}.{{minor}}.{{patch}}' }}"
 description: "{{cookiecutter.description}}"
 entry: {{ '{{entry}}' }}
 setup_args:
-- entry_override="{{ '{{entry}}' }}"
+  - entry_override="{{ '{{entry}}' }}"

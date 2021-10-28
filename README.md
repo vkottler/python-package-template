@@ -1,8 +1,8 @@
 <!--
     =====================================
     generator=datazen
-    version=1.8.4
-    hash=85718bed14a3c65ec6def7ae11074019
+    version=1.9.0
+    hash=aca6e910c47898473265cb936ea215d3
     =====================================
 -->
 
@@ -51,6 +51,7 @@ package-name
 │   │   └── README.md.j2
 │   └── variables
 │       └── package.yaml
+├── Makefile
 ├── manifest.yaml
 ├── package_name
 │   ├── app.py
@@ -66,6 +67,6 @@ package-name
     ├── __init__.py
     └── test_entry.py
 
-7 directories, 15 files
+7 directories, 16 files
 
 ```
