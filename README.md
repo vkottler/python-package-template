@@ -1,8 +1,8 @@
 <!--
     =====================================
     generator=datazen
-    version=1.9.0
-    hash=aca6e910c47898473265cb936ea215d3
+    version=1.12.1
+    hash=8712b16552d030c31aa89210d47e88df
     =====================================
 -->
 
@@ -55,18 +55,17 @@ package-name
 ├── manifest.yaml
 ├── package_name
 │   ├── app.py
+│   ├── dev_requirements.txt
 │   ├── entry.py
 │   ├── __init__.py
-│   └── py.typed
-├── README.md
-├── requirements
-│   ├── dev_requirements.txt
+│   ├── py.typed
 │   └── requirements.txt
+├── README.md
 ├── setup.py
 └── tests
     ├── __init__.py
     └── test_entry.py
 
-7 directories, 16 files
+6 directories, 16 files
 
 ```
