@@ -2,11 +2,13 @@
     =====================================
     generator=datazen
     version=1.12.1
-    hash=8712b16552d030c31aa89210d47e88df
+    hash=8b851e149ed7dfc24b3a28cb38e9559a
     =====================================
 -->
 
 # python-package-template
+
+![Build Status](https://github.com/vkottler/python-package-template/workflows/Build%20Template/badge.svg)
 
 *This is a template intended to be used with
 [Cookiecutter](https://github.com/cookiecutter/cookiecutter).*
