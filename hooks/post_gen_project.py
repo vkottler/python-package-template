@@ -7,10 +7,10 @@ import subprocess
 from typing import List
 
 
-def git_cmd(args: List[str]) -> None:
+def git_cmd(args: List[str], check: bool = True) -> None:
     """Run a 'git' command."""
 
-    subprocess.run(["git"] + args, check=True)
+    subprocess.run(["git"] + args, check=check)
 
 
 # initialize a repository, 'config' sub-module
@@ -44,6 +44,7 @@ subprocess.run(
     check=True,
 )
 
-# stage everything and commit
+# stage everything and commit, it's okay if committing doesn't work (e.g.
+# running in CI)
 git_cmd(["add", "-A"])
-git_cmd(["commit", "-m", "Initial commit."])
+git_cmd(["commit", "-m", "Initial commit."], False)
