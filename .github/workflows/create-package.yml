@@ -29,7 +29,7 @@ jobs:
           pip${{matrix.python-version}} install vmklib
       - name: venv
         run: |
-          mk PYTHON_VERSION=${{matrix.python-version}} venv REQUIREMENTS_DIR=requirements
+          mk PYTHON_VERSION=${{matrix.python-version}} venv
       - name: test
         run: |
           mk PYTHON_VERSION=${{matrix.python-version}} test

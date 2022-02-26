@@ -3,7 +3,7 @@ default_target: "groups-all"
 
 params:
   project: "{{cookiecutter.project_slug}}"
-  python_version: "3.8"
+  python_version: "$PYTHON_VERSION"
   entry: "{{cookiecutter.project_cli_entry}}"
 
 includes:
