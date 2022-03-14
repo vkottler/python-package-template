@@ -8,6 +8,7 @@ params:
 
 includes:
   - "config/includes/python.yaml"
+  - "config/includes/license.yaml"
   - "config/includes/help.yaml"
 
 configs:
@@ -31,7 +32,8 @@ renders:
       - "renders-python_readme_header.md"
 
 groups:
-  - name: "all"
+  - name: all
     dependencies:
-      - "groups-python"
+      - groups-python
+      - groups-license
       - "renders-README.md"

@@ -38,7 +38,7 @@ subprocess.run(
         "python-lint",
         "python-sa",
         "python-test",
-        "python-dist",
+        "python-build",
         "yaml",
     ],
     check=True,

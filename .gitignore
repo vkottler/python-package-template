@@ -3,3 +3,4 @@ build
 venv*
 package-name
 .*.env
+datazen-out

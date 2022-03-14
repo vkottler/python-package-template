@@ -3,6 +3,8 @@
 """
 
 # built-in
+from subprocess import check_output
+from sys import executable
 from unittest.mock import patch
 
 # module under test
@@ -18,3 +20,9 @@ def test_entry_basic():
 
     with patch("{{cookiecutter.project_slug}}.entry.entry", side_effect=SystemExit(1)):
         assert {{cookiecutter.project_slug}}_main(args) != 0
+
+
+def test_package_entry():
+    """Test the command-line entry through the 'python -m' invocation."""
+
+    check_output([executable, "-m", "{{cookiecutter.project_slug}}", "-h"])

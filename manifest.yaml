@@ -1,6 +1,9 @@
 ---
 default_target: "groups-all"
 
+includes:
+  - "config/includes/license.yaml"
+
 configs:
   - "local/configs"
 
@@ -22,9 +25,6 @@ commands:
       - "package-name"
 
 renders:
-  - name: "LICENSE"
-    key: "LICENSE_MIT"
-    output_dir: "."
   - name: "README.md"
     output_dir: "."
     dependencies:
@@ -33,5 +33,5 @@ renders:
 groups:
   - name: "all"
     dependencies:
-      - "renders-LICENSE"
+      - groups-license
       - "renders-README.md"
