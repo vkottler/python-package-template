@@ -28,7 +28,6 @@ git_cmd(["submodule", "update", "--init", "--recursive"])
 
 # run initial datazen sync
 mk_cmd(["venv"])
-mk_cmd(["mk-install"])
 mk_cmd(["dz-sync"])
 
 # make sure that the package is totally clean
