@@ -2,7 +2,7 @@
     =====================================
     generator=datazen
     version=1.13.5
-    hash=8b851e149ed7dfc24b3a28cb38e9559a
+    hash=6ec871f5deb9cffbc2ea3df4b51dd551
     =====================================
 -->
 
@@ -45,8 +45,10 @@ begin adding code and continuing to perform these workflow tasks.
 $ tree -I venv*|__pycache__|dist|htmlcov|datazen-out|config|build|*.egg-info -- package-name
 
 package-name
+├── LICENSE
 ├── local
 │   ├── configs
+│   │   ├── license.yaml
 │   │   ├── package.yaml
 │   │   └── python.yaml
 │   ├── templates
@@ -60,14 +62,16 @@ package-name
 │   ├── dev_requirements.txt
 │   ├── entry.py
 │   ├── __init__.py
+│   ├── __main__.py
 │   ├── py.typed
 │   └── requirements.txt
+├── pyproject.toml
 ├── README.md
 ├── setup.py
 └── tests
     ├── __init__.py
     └── test_entry.py
 
-6 directories, 16 files
+6 directories, 20 files
 
 ```
