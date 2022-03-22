@@ -4,3 +4,4 @@ venv*
 package-name
 .*.env
 datazen-out
+tags
