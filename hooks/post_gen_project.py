@@ -13,35 +13,33 @@ def git_cmd(args: List[str], check: bool = True) -> None:
     subprocess.run(["git"] + args, check=check)
 
 
+def mk_cmd(args: List[str], check: bool = True) -> None:
+    """Run an 'mk' command."""
+
+    subprocess.run(
+        ["mk", "-P", "{{cookiecutter.project_slug}}"] + args, check=check
+    )
+
+
 # initialize a repository, 'config' sub-module
 git_cmd(["init"])
 git_cmd(["submodule", "add", "https://github.com/vkottler/config"])
 git_cmd(["submodule", "update", "--init", "--recursive"])
 
 # run initial datazen sync
-subprocess.run(
-    ["mk", "-P", "{{cookiecutter.project_slug}}", "venv"], check=True
-)
-subprocess.run(
-    ["mk", "-P", "{{cookiecutter.project_slug}}", "mk-upgrade"], check=True
-)
-subprocess.run(
-    ["mk", "-P", "{{cookiecutter.project_slug}}", "dz-sync"], check=True
-)
+mk_cmd(["venv"])
+mk_cmd(["mk-install"])
+mk_cmd(["dz-sync"])
 
 # make sure that the package is totally clean
-subprocess.run(
+mk_cmd(
     [
-        "mk",
-        "-P",
-        "{{cookiecutter.project_slug}}",
         "python-lint",
         "python-sa",
         "python-test",
         "python-build",
         "yaml",
-    ],
-    check=True,
+    ]
 )
 
 # stage everything and commit, it's okay if committing doesn't work (e.g.
