@@ -16,9 +16,7 @@ def git_cmd(args: List[str], check: bool = True) -> None:
 def mk_cmd(args: List[str], check: bool = True) -> None:
     """Run an 'mk' command."""
 
-    subprocess.run(
-        ["mk", "-P", "{{cookiecutter.project_slug}}"] + args, check=check
-    )
+    subprocess.run(["mk"] + args, check=check)
 
 
 # initialize a repository, 'config' sub-module
