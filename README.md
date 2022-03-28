@@ -1,8 +1,8 @@
 <!--
     =====================================
     generator=datazen
-    version=1.13.5
-    hash=6ec871f5deb9cffbc2ea3df4b51dd551
+    version=1.14.0
+    hash=3a713c53358807e921d23ffb1358a965
     =====================================
 -->
 
@@ -42,7 +42,7 @@ in a clean state and doesn't require additional boilerplate or setup. Simply
 begin adding code and continuing to perform these workflow tasks.
 
 ```
-$ tree -I venv*|__pycache__|dist|htmlcov|datazen-out|config|build|*.egg-info -- package-name
+$ tree -I venv*|__pycache__|dist|htmlcov|datazen-out|config|build|*.egg-info|tags -- package-name
 
 package-name
 ├── LICENSE

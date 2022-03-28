@@ -20,7 +20,7 @@ commands:
     force: true
     arguments:
       - "-I"
-      - "venv*|__pycache__|dist|htmlcov|datazen-out|config|build|*.egg-info"
+      - "venv*|__pycache__|dist|htmlcov|datazen-out|config|build|*.egg-info|tags"
       - "--"
       - "package-name"
 

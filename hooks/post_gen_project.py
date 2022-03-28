@@ -39,6 +39,10 @@ mk_cmd(
     ]
 )
 
+# make sure the package can be installed in editable mode (this likely already
+# happened if the datazen manifest tried to get 'help' output)
+mk_cmd(["python-editable"])
+
 # stage everything and commit, it's okay if committing doesn't work (e.g.
 # running in CI)
 git_cmd(["add", "-A"])
