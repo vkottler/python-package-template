@@ -2,4 +2,6 @@
 major: 0
 minor: 1
 patch: 0
+{%- if cookiecutter.has_cli|lower == "true" %}
 entry: "{{cookiecutter.project_cli_entry}}"
+{%- endif %}

@@ -2,7 +2,9 @@
 name: "{{cookiecutter.project_name}}"
 version: "{{ '{{major}}.{{minor}}.{{patch}}' }}"
 description: "{{cookiecutter.description}}"
+{%- if cookiecutter.has_cli|lower == "true" %}
 entry: {{ '{{entry}}' }}
+{%- endif %}
 requirements: []
 dev_requirements:
   - vmklib

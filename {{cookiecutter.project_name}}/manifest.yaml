@@ -27,12 +27,18 @@ renders:
     output_dir: "."
     dependencies:
       - "compiles-local"
+{%- if cookiecutter.has_cli|lower == "true" %}
       - "commands-help"
+{%- endif %}
       - "renders-python_readme_header.md"
 
 groups:
   - name: all
     dependencies:
+{%- if cookiecutter.has_cli|lower == "true" %}
       - groups-python
+{%- else %}
+      - groups-python-no-cli
+{%- endif %}
       - groups-license
       - "renders-README.md"
