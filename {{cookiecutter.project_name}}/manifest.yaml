@@ -1,36 +1,39 @@
 ---
-default_target: "groups-all"
+default_target: groups-all
 
 params:
-  project: "{{cookiecutter.project_slug}}"
+  project: {{cookiecutter.project_slug}}
   python_version: "$PYTHON_VERSION"
-  entry: "{{cookiecutter.project_cli_entry}}"
+{%- if cookiecutter.has_cli|lower == "true" %}
+  entry: {{cookiecutter.project_cli_entry}}
+{%- endif %}
 
 includes:
-  - "config/includes/python.yaml"
-  - "config/includes/license.yaml"
+  - config/includes/python.yaml
+  - config/includes/license.yaml
 
 configs:
-  - "local/configs"
+  - local/configs
 
 variables:
-  - "local/variables"
+  - local/variables
 
 templates:
-  - "local/templates"
+  - local/templates
 
 compiles:
-  - name: "local"
+  - name: local
 
 renders:
-  - name: "README.md"
+  - name: README.md
     output_dir: "."
     dependencies:
-      - "compiles-local"
+      - compiles-local
+      - renders-python_readme_header.md
+      - renders-python_readme_dep_graph.md
 {%- if cookiecutter.has_cli|lower == "true" %}
-      - "commands-help"
+      - commands-help
 {%- endif %}
-      - "renders-python_readme_header.md"
 
 groups:
   - name: all
@@ -41,4 +44,4 @@ groups:
       - groups-python-no-cli
 {%- endif %}
       - groups-license
-      - "renders-README.md"
+      - renders-README.md

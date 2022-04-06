@@ -1,8 +1,8 @@
 <!--
     =====================================
     generator=datazen
-    version=2.0.0
-    hash=3a713c53358807e921d23ffb1358a965
+    version=2.1.0
+    hash=2fb061c177449921b710a5a9889d4219
     =====================================
 -->
 
@@ -45,6 +45,8 @@ begin adding code and continuing to perform these workflow tasks.
 $ tree -I venv*|__pycache__|dist|htmlcov|datazen-out|config|build|*.egg-info|tags -- package-name
 
 package-name
+├── im
+│   └── pydeps.svg
 ├── LICENSE
 ├── local
 │   ├── configs
@@ -72,6 +74,6 @@ package-name
     ├── __init__.py
     └── test_entry.py
 
-6 directories, 20 files
+7 directories, 21 files
 
 ```

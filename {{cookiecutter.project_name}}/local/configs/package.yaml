@@ -1,7 +1,7 @@
 ---
-name: "{{cookiecutter.project_name}}"
+name: {{cookiecutter.project_name}}
 version: "{{ '{{major}}.{{minor}}.{{patch}}' }}"
-description: "{{cookiecutter.description}}"
+description: {{cookiecutter.description}}
 {%- if cookiecutter.has_cli|lower == "true" %}
 entry: {{ '{{entry}}' }}
 {%- endif %}

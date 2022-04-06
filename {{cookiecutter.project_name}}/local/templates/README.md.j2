@@ -1,4 +1,5 @@
 {{ '{{python_readme_header_md}}' }}
+{%- if cookiecutter.has_cli|lower == "true" %}
 {{ '{% if "help" in global %}' }}
 
 # Command-line Options
@@ -9,3 +10,6 @@ $ {{ '{{" ".join(help["args"])}}' }}
 {{ '{{help["stdout"]}}' }}
 ```
 {{ '{% endif %}' }}
+{%- endif %}
+
+{{ '{{python_readme_dep_graph_md}}' }}
