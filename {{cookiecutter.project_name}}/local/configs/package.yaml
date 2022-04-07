@@ -7,4 +7,4 @@ entry: {{ '{{entry}}' }}
 {%- endif %}
 requirements: []
 dev_requirements:
-  - vmklib
+  - setuptools-wrapper
