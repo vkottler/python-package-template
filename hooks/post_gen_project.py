@@ -51,7 +51,10 @@ def remove_conditionals() -> None:
     command-line package.
     """
 
-    if "{{cookiecutter.has_cli}}" != "True":
+    if (
+        "{{cookiecutter.has_cli}}"  # pylint: disable=comparison-of-constants
+        != "True"
+    ):
         to_remove = [
             Path("{{cookiecutter.project_slug}}", "app.py"),
             Path("tests", "test_entry.py"),
@@ -67,7 +70,10 @@ def verify() -> None:
     mk_cmd(["python-lint", "python-sa", "python-build-once", "yaml"])
 
     # Only run tests for command-line packages.
-    if "{{cookiecutter.has_cli}}" == "True":
+    if (
+        "{{cookiecutter.has_cli}}"  # pylint: disable=comparison-of-constants
+        != "True"
+    ):
         mk_cmd(["python-test"])
 
     # Make sure the package can be installed in editable mode (this likely
