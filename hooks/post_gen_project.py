@@ -63,14 +63,8 @@ def remove_conditionals() -> None:
 def verify() -> None:
     """Make sure that the package is totally clean."""
 
-    mk_cmd(
-        [
-            "python-lint",
-            "python-sa",
-            "python-build",
-            "yaml",
-        ]
-    )
+    mk_cmd(["venv", "python-install-yamllint"])
+    mk_cmd(["python-lint", "python-sa", "python-build-once", "yaml"])
 
     # Only run tests for command-line packages.
     if "{{cookiecutter.has_cli}}" == "True":
