@@ -1,2 +1,3 @@
 cookiecutter
 datazen
+vcorelib

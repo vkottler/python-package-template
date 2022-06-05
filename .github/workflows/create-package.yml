@@ -14,11 +14,17 @@ jobs:
     strategy:
       matrix:
         python-version:
+          - "3.7"
           - "3.8"
+          - "3.9"
+          - "3.10"
         system:
           - macos-latest
+          # - windows-latest
           - ubuntu-latest
 
+    env:
+      PYTHON_VERSION: ${{matrix.python-version}}
     steps:
       - uses: actions/checkout@master
         with:
@@ -33,7 +39,7 @@ jobs:
           pip${{matrix.python-version}} install vmklib
       - name: venv
         run: |
-          mk PYTHON_VERSION=${{matrix.python-version}} venv
+          mk venv python-install-yamllint
       - name: test
         run: |
-          mk PYTHON_VERSION=${{matrix.python-version}} test
+          mk test yaml
