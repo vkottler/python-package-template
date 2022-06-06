@@ -85,6 +85,10 @@ def verify() -> None:
     ):
         mk_cmd(["python-test"])
 
+    # For some reason requirements' files are getting deleted, so try to
+    # render them again.
+    mk_cmd(["dz-sync"])
+
 
 initialize()
 datazen()

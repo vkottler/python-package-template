@@ -1,8 +1,8 @@
 <!--
     =====================================
     generator=datazen
-    version=2.1.0
-    hash=2fb061c177449921b710a5a9889d4219
+    version=3.0.1
+    hash=a80f5a5aa9df1dacf5925af001abf5a9
     =====================================
 -->
 
@@ -68,12 +68,16 @@ package-name
 │   ├── py.typed
 │   └── requirements.txt
 ├── pyproject.toml
+├── pytest.ini
 ├── README.md
 ├── setup.py
+├── tasks
+│   ├── conf.py
+│   └── __init__.py
 └── tests
     ├── __init__.py
     └── test_entry.py
 
-7 directories, 21 files
+8 directories, 24 files
 
 ```
