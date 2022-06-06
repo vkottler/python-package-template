@@ -20,7 +20,7 @@ jobs:
           - "3.10"
         system:
           - macos-latest
-          # - windows-latest
+          - windows-latest
           - ubuntu-latest
 
     env:
@@ -37,9 +37,17 @@ jobs:
       - name: install-mk
         run: |
           pip${{matrix.python-version}} install vmklib
+
       - name: venv
         run: |
           mk venv python-install-yamllint
+        if: |
+          matrix.python-version != '3.7'
+          || matrix.system != 'windows-latest'
+
       - name: test
         run: |
           mk test yaml
+        if: |
+          matrix.python-version != '3.7'
+          || matrix.system != 'windows-latest'

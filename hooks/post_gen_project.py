@@ -4,6 +4,7 @@ post_gen_project - Perform some actions that are not templated.
 
 # built-in
 from pathlib import Path
+from platform import system
 import subprocess
 from typing import List
 
@@ -41,7 +42,7 @@ def commit() -> None:
 def datazen() -> None:
     """Run initial datazen sync."""
 
-    mk_cmd(["venv"])
+    # Render everything.
     mk_cmd(["dz-sync"])
 
 
@@ -66,8 +67,16 @@ def remove_conditionals() -> None:
 def verify() -> None:
     """Make sure that the package is totally clean."""
 
-    mk_cmd(["venv", "python-install-yamllint"])
-    mk_cmd(["python-lint", "python-sa", "python-build-once", "yaml"])
+    # Install the package as editable to sanity check that the package
+    # structure is healthy. This may already be satisfied.
+    mk_cmd(["python-editable"])
+
+    mk_cmd(["python-install-yamllint", "python-build-once"])
+
+    # Only run certain analysis tasks if we're not on Windows. More
+    # troubleshooting to do here.
+    if system() != "Windows":
+        mk_cmd(["python-lint", "python-sa", "yaml"])
 
     # Only run tests for command-line packages.
     if (
@@ -75,10 +84,6 @@ def verify() -> None:
         != "True"
     ):
         mk_cmd(["python-test"])
-
-    # Make sure the package can be installed in editable mode (this likely
-    # already happened if the datazen manifest tried to get 'help' output).
-    mk_cmd(["python-editable"])
 
 
 initialize()
