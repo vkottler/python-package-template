@@ -52,10 +52,7 @@ def remove_conditionals() -> None:
     command-line package.
     """
 
-    if (
-        "{{cookiecutter.has_cli}}"  # pylint: disable=comparison-of-constants
-        != "True"
-    ):
+    if "{{cookiecutter.has_cli}}" != "True":
         to_remove = [
             Path("{{cookiecutter.project_slug}}", "app.py"),
             Path("tests", "test_entry.py"),
@@ -79,10 +76,7 @@ def verify() -> None:
         mk_cmd(["python-lint", "python-sa", "yaml"])
 
     # Only run tests for command-line packages.
-    if (
-        "{{cookiecutter.has_cli}}"  # pylint: disable=comparison-of-constants
-        != "True"
-    ):
+    if "{{cookiecutter.has_cli}}" == "True":
         mk_cmd(["python-test"])
 
     # For some reason requirements' files are getting deleted, so try to
