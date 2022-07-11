@@ -1,8 +1,8 @@
 <!--
     =====================================
     generator=datazen
-    version=3.0.1
-    hash=a80f5a5aa9df1dacf5925af001abf5a9
+    version=3.0.8
+    hash=5bbc33d5ee73fefb96eb87edafeb78ff
     =====================================
 -->
 
@@ -75,9 +75,16 @@ package-name
 │   ├── conf.py
 │   └── __init__.py
 └── tests
+    ├── data
+    │   ├── invalid
+    │   │   └── test.txt
+    │   └── valid
+    │       └── test.txt
     ├── __init__.py
-    └── test_entry.py
+    ├── resources.py
+    ├── test_entry.py
+    └── test_resources.py
 
-8 directories, 24 files
+11 directories, 28 files
 
 ```
