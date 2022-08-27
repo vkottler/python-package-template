@@ -1,18 +1,18 @@
 ---
-default_target: "groups-all"
+default_target: groups-all
 
 includes:
-  - "config/includes/license.yaml"
+  - config/includes/license.yaml
 
 configs:
-  - "local/configs"
+  - local/configs
 
 schemas:
-  - "config/schemas"
+  - config/schemas
 
 templates:
-  - "config/templates"
-  - "local/templates"
+  - config/templates
+  - local/templates
 
 commands:
   - name: "tree"
@@ -25,13 +25,17 @@ commands:
       - "package-name"
 
 renders:
-  - name: "README.md"
+  - name: README.md
     output_dir: "."
     dependencies:
-      - "commands-tree"
+      - commands-tree
+
+  - name: FUNDING.yml
+    output_dir: ".github"
 
 groups:
-  - name: "all"
+  - name: all
     dependencies:
       - groups-license
-      - "renders-README.md"
+      - renders-README.md
+      - renders-FUNDING.yml
