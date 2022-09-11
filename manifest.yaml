@@ -3,15 +3,16 @@ default_target: groups-all
 
 includes:
   - config/includes/license.yaml
+  - config/includes/funding.yaml
 
-configs:
-  - local/configs
-
-schemas:
-  - config/schemas
+compiles:
+  - name: local
+    schemas:
+      - config/schemas
+    configs:
+      - local/configs
 
 templates:
-  - config/templates
   - local/templates
 
 commands:
@@ -19,8 +20,9 @@ commands:
     command: "tree"
     force: true
     arguments:
+      - "-a"
       - "-I"
-      - "venv*|__pycache__|dist|htmlcov|datazen-out|config|build|*.egg-info|tags"
+      - "venv*|__pycache__|dist|*cov*|*-out|config|build|*.egg-info|tags|.git*|.*cache*"
       - "--"
       - "package-name"
 
@@ -29,13 +31,11 @@ renders:
     output_dir: "."
     dependencies:
       - commands-tree
-
-  - name: FUNDING.yml
-    output_dir: ".github"
+      - compiles-local
 
 groups:
   - name: all
     dependencies:
       - groups-license
+      - groups-funding
       - renders-README.md
-      - renders-FUNDING.yml

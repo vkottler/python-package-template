@@ -11,18 +11,19 @@ params:
 includes:
   - config/includes/python.yaml
   - config/includes/license.yaml
-
-configs:
-  - local/configs
-
-variables:
-  - local/variables
+{%- if cookiecutter.has_funding|lower == "true" %}
+  - config/includes/funding.yaml
+{%- endif %}
 
 templates:
   - local/templates
 
 compiles:
   - name: local
+    configs:
+      - local/configs
+    variables:
+      - local/variables
 
 renders:
   - name: README.md
@@ -44,4 +45,7 @@ groups:
       - groups-python-no-cli
 {%- endif %}
       - groups-license
+{%- if cookiecutter.has_funding|lower == "true" %}
+      - groups-funding
+{%- endif %}
       - renders-README.md
