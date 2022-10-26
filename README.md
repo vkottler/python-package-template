@@ -2,7 +2,7 @@
     =====================================
     generator=datazen
     version=3.1.0
-    hash=af33aafddc6caf2140e5268e2bf8c997
+    hash=6c891bdadde3f009ed0f628e0058bacf
     =====================================
 -->
 
@@ -61,6 +61,7 @@ package-name
 │       └── package.yaml
 ├── Makefile
 ├── manifest.yaml
+├── mypy.ini
 ├── package_name
 │   ├── app.py
 │   ├── dev_requirements.txt
@@ -87,6 +88,6 @@ package-name
     ├── test_entry.py
     └── test_resources.py
 
-11 directories, 30 files
+11 directories, 31 files
 
 ```
