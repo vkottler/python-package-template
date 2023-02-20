@@ -16,6 +16,20 @@ email [vaughnkottler@gmail.com]: <your@email.com>
 ...
 ```
 
+## Platform Support
+
+This template is tested on the following platforms:
+
+{% for system in ci["systems"] %}
+* `{{system}}`
+{% endfor %}
+
+and Python versions:
+
+{% for version in ci["python_versions"] %}
+* `python{{version}}`
+{% endfor %}
+
 ## Structure
 
 The resulting template is a [git](https://git-scm.com/) repository with a
