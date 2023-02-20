@@ -27,6 +27,11 @@ commands:
       - "package-name"
 
 renders:
+  - name: create-package.yml
+    output_dir: ".github/workflows"
+    dependencies:
+      - compiles-local
+
   - name: README.md
     output_dir: "."
     dependencies:
@@ -39,3 +44,4 @@ groups:
       - groups-license
       - groups-funding
       - renders-README.md
+      - renders-create-package.yml

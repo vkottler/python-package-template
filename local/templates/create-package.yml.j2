@@ -1,0 +1,52 @@
+---
+name: Build Template
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+
+    runs-on: {{"${{matrix.system}}"}}
+    strategy:
+      matrix:
+        python-version:
+        {% for version in ci.python_versions %}
+          - "{{version}}"
+        {% endfor %}
+        system:
+        {% for system in ci.systems %}
+          - {{system}}
+        {% endfor %}
+
+    env:
+      PYTHON_VERSION: {{"${{matrix.python-version}}"}}
+    steps:
+      - uses: actions/checkout@master
+        with:
+          submodules: recursive
+      - name: python{{"${{matrix.python-version}}"}} setup
+        uses: actions/setup-python@v2
+        with:
+          python-version: {{"${{matrix.python-version}}"}}
+      - uses: ts-graphviz/setup-graphviz@v1
+      - name: install-mk
+        run: |
+          pip{{"${{matrix.python-version}}"}} install vmklib
+
+      - name: venv
+        run: |
+          mk venv python-install-yamllint
+        if: |
+          matrix.python-version != '3.7'
+          || matrix.system != 'windows-latest'
+
+      - name: test
+        run: |
+          mk test yaml
+        if: |
+          matrix.python-version != '3.7'
+          || matrix.system != 'windows-latest'

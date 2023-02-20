@@ -2,7 +2,7 @@
     =====================================
     generator=datazen
     version=3.1.0
-    hash=6c891bdadde3f009ed0f628e0058bacf
+    hash=5fe794c2a39253238c435bba61f7aaad
     =====================================
 -->
 
@@ -23,6 +23,21 @@ name [Vaughn Kottler]: <Your Name>
 email [vaughnkottler@gmail.com]: <your@email.com>
 ...
 ```
+
+## Platform Support
+
+This template is tested on the following platforms:
+
+* `macos-latest`
+* `windows-latest`
+* `ubuntu-latest`
+
+and Python versions:
+
+* `python3.7`
+* `python3.8`
+* `python3.9`
+* `python3.10`
 
 ## Structure
 
