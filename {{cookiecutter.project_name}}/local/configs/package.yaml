@@ -9,3 +9,4 @@ requirements: []
 dev_requirements:
   - setuptools-wrapper
   - types-setuptools
+  - vcorelib
