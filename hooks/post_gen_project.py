@@ -54,7 +54,7 @@ def remove_conditionals() -> None:
 
     if "{{cookiecutter.has_cli}}" != "True":
         to_remove = [
-            Path("{{cookiecutter.project_slug}}", "app.py"),
+            Path("{{cookiecutter.project_slug}}", "commands", "__init__.py"),
             Path("tests", "test_entry.py"),
         ]
         for path in to_remove:
