@@ -5,8 +5,8 @@ description: {{cookiecutter.description}}
 {%- if cookiecutter.has_cli|lower == "true" %}
 entry: {{ '{{entry}}' }}
 {%- endif %}
-requirements: []
+requirements:
+  - vcorelib
 dev_requirements:
   - setuptools-wrapper
   - types-setuptools
-  - vcorelib

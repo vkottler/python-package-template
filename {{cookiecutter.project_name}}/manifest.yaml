@@ -34,6 +34,16 @@ renders:
       - renders-python_readme_dep_graph.md
 {%- if cookiecutter.has_cli|lower == "true" %}
       - commands-help
+
+  - name: app.py
+    output_dir: "{{'{{project}}'}}"
+    dependencies:
+      - compiles-python
+
+  - name: all.py
+    output_dir: "{{'{{project}}'}}/commands"
+    dependencies:
+      - compiles-python
 {%- endif %}
 
 groups:
