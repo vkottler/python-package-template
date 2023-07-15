@@ -1,8 +1,8 @@
 <!--
     =====================================
     generator=datazen
-    version=3.1.0
-    hash=5fe794c2a39253238c435bba61f7aaad
+    version=3.1.2
+    hash=da616cf708ce2ca9aa2061d8291253be
     =====================================
 -->
 
@@ -34,10 +34,10 @@ This template is tested on the following platforms:
 
 and Python versions:
 
-* `python3.7`
 * `python3.8`
 * `python3.9`
 * `python3.10`
+* `python3.11`
 
 ## Structure
 
@@ -79,6 +79,9 @@ package-name
 ├── mypy.ini
 ├── package_name
 │   ├── app.py
+│   ├── commands
+│   │   ├── all.py
+│   │   └── __init__.py
 │   ├── dev_requirements.txt
 │   ├── entry.py
 │   ├── __init__.py
@@ -103,6 +106,6 @@ package-name
     ├── test_entry.py
     └── test_resources.py
 
-11 directories, 31 files
+12 directories, 33 files
 
 ```
