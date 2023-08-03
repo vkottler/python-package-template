@@ -2,7 +2,7 @@
     =====================================
     generator=datazen
     version=3.1.2
-    hash=da616cf708ce2ca9aa2061d8291253be
+    hash=f342522eb34aa535e3f4415ff40c3f79
     =====================================
 -->
 
@@ -57,7 +57,7 @@ in a clean state and doesn't require additional boilerplate or setup. Simply
 begin adding code and continuing to perform these workflow tasks.
 
 ```
-$ tree -a -I venv*|__pycache__|dist|*cov*|*-out|config|build|*.egg-info|tags|.git*|.*cache* -- package-name
+$ tree -a -I venv*|__pycache__|dist|*cov*|*-out|config|build|*.egg-info|tags|.git*|.*cache*|docs|mklocal -- package-name
 
 package-name
 ├── .flake8
@@ -106,6 +106,6 @@ package-name
     ├── test_entry.py
     └── test_resources.py
 
-12 directories, 33 files
+13 directories, 33 files
 
 ```

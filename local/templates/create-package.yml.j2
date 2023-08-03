@@ -24,29 +24,24 @@ jobs:
 
     env:
       PYTHON_VERSION: {{"${{matrix.python-version}}"}}
+
     steps:
       - uses: actions/checkout@master
         with:
           submodules: recursive
+
       - name: python{{"${{matrix.python-version}}"}} setup
         uses: actions/setup-python@v2
         with:
           python-version: {{"${{matrix.python-version}}"}}
+
       - uses: ts-graphviz/setup-graphviz@v1
+
       - name: install-mk
-        run: |
-          pip{{"${{matrix.python-version}}"}} install vmklib
+        run: pip{{"${{matrix.python-version}}"}} install vmklib
 
       - name: venv
-        run: |
-          mk venv python-install-yamllint
-        if: |
-          matrix.python-version != '3.7'
-          || matrix.system != 'windows-latest'
+        run: mk venv python-install-yamllint
 
       - name: test
-        run: |
-          mk test yaml
-        if: |
-          matrix.python-version != '3.7'
-          || matrix.system != 'windows-latest'
+        run: mk test yaml
