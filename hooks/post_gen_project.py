@@ -73,7 +73,7 @@ def verify() -> None:
     # Only run certain analysis tasks if we're not on Windows. More
     # troubleshooting to do here.
     if system() != "Windows":
-        mk_cmd(["python-lint", "python-sa", "yaml"])
+        mk_cmd(["python-lint", "python-sa", "yaml", "docs"])
 
     # Only run tests for command-line packages.
     if "{{cookiecutter.has_cli}}" == "True":

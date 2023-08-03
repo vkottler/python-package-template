@@ -22,7 +22,7 @@ commands:
     arguments:
       - "-a"
       - "-I"
-      - "venv*|__pycache__|dist|*cov*|*-out|config|build|*.egg-info|tags|.git*|.*cache*"
+      - "venv*|__pycache__|dist|*cov*|*-out|config|build|*.egg-info|tags|.git*|.*cache*|docs|mklocal"
       - "--"
       - "package-name"
 
