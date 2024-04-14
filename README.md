@@ -1,8 +1,8 @@
 <!--
     =====================================
     generator=datazen
-    version=3.1.2
-    hash=f342522eb34aa535e3f4415ff40c3f79
+    version=3.1.4
+    hash=29499dbd2ba69fdefa8f3cb1d37382f9
     =====================================
 -->
 
@@ -34,10 +34,8 @@ This template is tested on the following platforms:
 
 and Python versions:
 
-* `python3.8`
-* `python3.9`
-* `python3.10`
 * `python3.11`
+* `python3.12`
 
 ## Structure
 
@@ -106,6 +104,6 @@ package-name
     ├── test_entry.py
     └── test_resources.py
 
-13 directories, 33 files
+12 directories, 33 files
 
 ```
