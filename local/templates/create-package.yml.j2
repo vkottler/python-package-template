@@ -30,12 +30,12 @@ jobs:
         with:
           submodules: recursive
 
+      - uses: tlylt/install-graphviz@main
+
       - name: python{{"${{matrix.python-version}}"}} setup
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@main
         with:
           python-version: {{"${{matrix.python-version}}"}}
-
-      - uses: ts-graphviz/setup-graphviz@v1
 
       - name: install-mk
         run: pip{{"${{matrix.python-version}}"}} install vmklib
