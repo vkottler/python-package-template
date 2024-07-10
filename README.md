@@ -2,7 +2,7 @@
     =====================================
     generator=datazen
     version=3.1.4
-    hash=29499dbd2ba69fdefa8f3cb1d37382f9
+    hash=ef9ccb0067eda7c7e9ec642305fbd978
     =====================================
 -->
 
@@ -18,7 +18,12 @@
 Invoke `cookiecutter` and fill out information about your project:
 
 ```
-$ cookiecutter git@github.com:vkottler/python-package-template.git
+cookiecutter git@github.com:vkottler/python-package-template.git
+```
+
+Example output (interactive):
+
+```
 name [Vaughn Kottler]: <Your Name>
 email [vaughnkottler@gmail.com]: <your@email.com>
 ...
@@ -104,6 +109,6 @@ package-name
     ├── test_entry.py
     └── test_resources.py
 
-12 directories, 33 files
+13 directories, 33 files
 
 ```
